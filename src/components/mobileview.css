@@ -1,0 +1,135 @@
+body {
+    overflow-x: hidden; 
+    right:25%;
+}
+@media screen and (max-width: 768px) {
+    #menu {
+        display: none;
+    }
+    #menu.active {
+        display: block;
+        position: absolute;
+        top: 90%; 
+        background-color: #000; 
+        width: 100%;
+        z-index: 9999; 
+        text-align: center;
+    }
+
+    #menu.active li {
+        padding: 10px 0;
+        border-bottom: 1px solid #fff;
+    }
+    .downloadbttn{
+        display: none;
+    }
+    .githublogo{
+        top:30%;
+        width:10%;
+    }
+    #home{
+        margin-top: 30%;
+    }
+    .descdiv{
+        width:95%
+    }
+    .picdiv {
+        width: 100%; 
+    }
+
+    .picdiv {
+        margin-top: 2%; 
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .descdiv p{
+        font-size:1em;
+        right:20%
+    }
+
+    .homeintro{
+        flex-direction: column;
+        align-items: center;
+    }
+    .aboutintro, .eduintro,.projintro ,.contintro{
+        margin-top:7%;
+    }
+    .aboutintro h2, .eduintro h2,.projintro h2,.contintro h2{
+        margin-left:4%;
+    }
+    .aboutdesc {
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+    .aboutdesc .natdob {
+        width: 100%;
+        margin-left:10%;
+    }
+    .natdob{
+        margin-bottom: 4%;
+    }
+    .aboutdesc div{
+        margin-left:10%;
+    }
+
+    .collegediv {
+        flex-direction: column; 
+        align-items: center; 
+    }
+    #college{
+        width:100%;
+    }
+    .years{
+        float: left; 
+        width: 100%; 
+        margin-right: 2%;
+    }
+        .eduparagraph {
+        overflow: hidden; 
+        width:100%;
+        }
+
+        #certificates{
+            margin-left:0;
+        }
+        .certifdiv,.certificatesdiv {
+            flex-direction: column;
+            width:100%;
+          }
+          .certifparagraph {
+            text-align: left;
+            width: calc(100% - 8%); 
+            overflow: auto;
+          }
+
+      .projectbigdiv{
+        margin-left:18%;
+      }
+}
+
+.mobile-toggle {
+    display: none; 
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        position: fixed;
+        z-index: 1000; /* Ensure it's above other content */
+      }
+}
+@media screen and (max-width: 900px) { 
+    .wrapper .carousel { 
+        grid-auto-columns: calc((100% / 2) - 9px); 
+  
+    } 
+  } 
+  
+  @media screen and (max-width: 600px) { 
+    .wrapper .carousel { 
+        grid-auto-columns: 100%; 
+  
+    } 
+  }
+  

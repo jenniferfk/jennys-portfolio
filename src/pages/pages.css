@@ -1,0 +1,115 @@
+.webdev {
+    font-size: 3em;
+    letter-spacing: -0.05em;
+}
+.picdiv{
+    width: 30%;
+}
+.selfpic{
+    width:70%;
+    height:auto;
+}
+.skill-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 10px; 
+}
+.skill {
+    background-color: purple;
+    color: white;
+    border-radius: 20px;
+    width: 20%;
+    height: 10%;
+}
+.certifdiv{
+    width:80%;
+}
+.certifdiv:hover .arrowspan{
+    font-size: 1.1em; 
+}
+@keyframes Color{
+    0%{
+      color:#7e3ce1;
+    }
+    
+    20%{
+      color:#b84fe9;
+    }
+    
+    40%{
+      color:#3b0158;
+    }
+    
+    60%{
+      color:#4c1d95;
+    }
+    
+    80%{
+      color:#b84fe9;
+    }
+    
+    100%{
+      color:#AC92EC;
+    }
+  }
+  
+  @-moz-keyframes Color{
+    0%{
+      color:#7e3ce1;
+    }
+    
+    20%{
+      color:#b84fe9;
+    }
+    
+    40%{
+      color:#3b0158;
+    }
+    
+    60%{
+      color:#4c1d95;
+    }
+    
+    80%{
+      color:#b84fe9;
+    }
+    
+    100%{
+      color:#AC92EC;
+    }
+  }
+  
+  @-webkit-keyframes Color{
+    0%{
+      color:#7e3ce1;
+    }
+    
+    20%{
+      color:#b84fe9;
+    }
+    
+    40%{
+      color:#3b0158;
+    }
+    
+    60%{
+      color:#4c1d95;
+    }
+    
+    80%{
+      color:#b84fe9;
+    }
+    
+    100%{
+      color:#AC92EC;
+    }
+  }
+  .text-anim{
+    animation: Color 4s linear infinite;
+  -webkit-animation: Color 4s ease-in-out infinite;
+  }
+
+
+  
+  
