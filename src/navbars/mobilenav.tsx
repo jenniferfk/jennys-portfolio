@@ -102,7 +102,6 @@ const variants = {
   }
 };
 
-const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 const scrollToSection = (id) => {
   const section = document.getElementById(id);
   if (section) {
