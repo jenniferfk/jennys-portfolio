@@ -2,10 +2,10 @@
 body {
   width: 100vw;
   height: 100vh;
-  background: black;
-  overflow-x: hidden;
+  overflow-x: hidden !important;
   padding: 0;
   margin: 0;
+  background-color: #f4e5d4;
 }
 ::-webkit-scrollbar {
   width: 6px;
@@ -14,4 +14,166 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #4c1d95; 
   border-radius: 3px; 
+}
+.background-section {
+  position: relative; 
+}
+
+.flowerpic {
+  position: absolute;
+  bottom:35%;
+  right: 10px; 
+  z-index: 10; 
+}
+.background-section:nth-child(1) {
+  background-color:#ffadad; 
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.background-section2 {
+  background-color: #ffadad;
+  clip-path: polygon(0 0, 20% 12%, 100% 0, 100% 90%, 50% 100%, 0 90%);
+}
+
+.background-section3 {
+  background-color:  #ffadad;
+  clip-path: polygon(0 0,20% 8%, 100% 0, 100% 100%, 0 100%);
+}
+@media screen and (max-width: 768px) {
+  .background-section3 {
+    background-color:  #ffadad;
+    clip-path: polygon(0 0,20% 2%, 100% 0, 100% 100%, 0 100%);
+    }
+}
+.title{
+  margin-left:20%;
+}
+/*
+* {
+  outline: 1px solid red; 
+}
+*/
+@media screen and (max-width: 768px) {
+  body {
+    overflow-x: hidden !important;
+  }
+  #home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  #menu.active li {
+      padding: 10px 0;
+      border-bottom: 1px solid #fff;
+  }
+  .descdiv{
+      width:90%
+  }
+  .picdiv {
+      width: 100%; 
+  }
+  .flowerpic {
+    position: absolute;
+    bottom:38%;
+    right:10px;
+    z-index: 10; 
+  }
+  .picdiv {
+      margin-top: 2%; 
+      display: flex; 
+      justify-content: center;
+      align-items: center;
+  }
+  .descdiv p{
+      font-size:1em;
+      right:20%;
+  }
+
+  .homeintro{
+      display: block;
+      align-items: center;
+      overflow: hidden;
+      flex-wrap: wrap;
+  }
+  
+  .aboutintro, .eduintro,.projintro ,.contintro{
+      margin-top:7%;
+  }
+  .aboutintro h2, .eduintro h2,.projintro h2,.contintro h2{
+      margin-left:4%;
+  }
+  .aboutdesc {
+      flex-direction: column; 
+      align-items: flex-start; 
+  }
+  .aboutdesc .natdob {
+      width: 100%;
+      margin-left:10%;
+  }
+  .natdob{
+      margin-bottom: 4%;
+  }
+  .aboutdesc div{
+      margin-left:10%;
+  }
+
+  .collegediv {
+      flex-direction: column; 
+      align-items: center; 
+  }
+  #college{
+      width:100%;
+  }
+  .years{
+      float: left; 
+      width: 100%; 
+      margin-right: 2%;
+  }
+      .eduparagraph {
+      overflow: hidden; 
+      width:100%;
+      }
+
+      #certificates{
+          margin-left:0;
+      }
+      .certifdiv,.certificatesdiv {
+          flex-direction: column;
+          width:100%;
+        }
+        .certifparagraph {
+          text-align: left;
+          width: calc(100% - 8%); 
+          overflow: auto;
+        }
+
+    .projectbigdiv{
+      margin-left:18%;
+    }
+}
+
+.mobile-toggle {
+  display: none; 
+}
+
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+      position:fixed;
+      z-index: 1000; 
+    }
+}
+@media screen and (max-width: 900px) { 
+  .wrapper .carousel { 
+      grid-auto-columns: calc((100% / 2) - 9px); 
+
+  } 
+} 
+
+@media screen and (max-width: 600px) { 
+  .wrapper .carousel { 
+      grid-auto-columns: 100%; 
+
+  } 
 }

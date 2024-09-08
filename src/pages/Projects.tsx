@@ -1,101 +1,44 @@
-import React, { useEffect } from 'react'
-import {projects} from '../data/interfaces/projects.ts'
+import React from 'react';
+import { projects } from '../data/interfaces/projects.ts';
 import './pages.css';
-import './carousel.css'
+import './carousel.css';
+
 export default function Projects() {
-  useEffect(() => {
-    const carousel = document.querySelector<HTMLUListElement>(".carousel");
-    const arrowBtns = document.querySelectorAll<HTMLElement>(".wrapper i");
-    const wrapper = document.querySelector<HTMLDivElement>(".wrapper");
-
-    if (!carousel || !wrapper) return;
-
-    const firstCard = carousel.querySelector<HTMLLIElement>(".card");
-    const firstCardWidth = firstCard?.offsetWidth || 0;
-
-    let isDragging = false;
-    let startX: number | null = null;
-    let startScrollLeft: number | null = null;
-
-    const dragStart = (e: MouseEvent) => {
-      isDragging = true;
-      carousel.classList.add("dragging");
-      startX = e.pageX;
-      startScrollLeft = carousel.scrollLeft;
-    };
-
-    const dragging = (e: MouseEvent) => {
-      if (!isDragging || !startX || !startScrollLeft) return;
-      const newScrollLeft = startScrollLeft - (e.pageX - startX);
-      if (newScrollLeft <= 0 || newScrollLeft >= (carousel.scrollWidth - carousel.offsetWidth)) {
-        isDragging = false;
-        return;
-      }
-      carousel.scrollLeft = newScrollLeft;
-    };
-
-    const dragStop = () => {
-      isDragging = false;
-      carousel.classList.remove("dragging");
-    };
-
-    if (carousel) {
-      carousel.addEventListener("mousedown", dragStart);
-      carousel.addEventListener("mousemove", dragging);
-      document.addEventListener("mouseup", dragStop);
-    }
-
-    arrowBtns.forEach(btn => {
-      btn.addEventListener("click", () => {
-        if (carousel) {
-          carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
-        }
-      });
-    });
-
-    return () => {
-      if (carousel) {
-        carousel.removeEventListener("mousedown", dragStart);
-        carousel.removeEventListener("mousemove", dragging);
-        document.removeEventListener("mouseup", dragStop);
-      }
-      arrowBtns.forEach(btn => {
-        btn.removeEventListener("click", () => {
-          if (carousel) {
-            carousel.scrollLeft += btn.id === "left" ? -firstCardWidth : firstCardWidth;
-          }
-        });
-      });
-    };
-
-  }, []);
   return (
-    <div className="container mt-12 px-6">
-      <div className="flex items-center">
-        <h1 className="text-2xl font-bold text-purple-500">Projects</h1>
-        <div className="flex-grow border-t border-purple-500 ml-4"></div>
+    <div className="container mx-auto mt-12 px-6">
+      <div className="flex justify-center pt-32">
+        <h1 className="text-4xl font-bold title md:mt-16 text-white">Projects</h1>
       </div>
-      <div id='tipsntricks' className='text-center bgfaq'>
-      <div id='tipscarousel'>
-        <div className="wrapper mb-6">
-          <i id="left" className="fa-solid fas fa-angle-left text-white bg-purple-500">&lt;</i>
-          <ul className="carousel">
-            {projects.map((project, index) => (
-              <li key={index} className="card text-center">
-                <div className="img">
-                  <img src={project.imageUrl} alt="" draggable="false" />
-                </div>
-                <h3 className="articletitle font-bold">{project.title}</h3>
-                <p>{project.description}</p>
-                <span onClick={() => window.location.href = project.articleUrl}>Go to Github</span>
-              </li>
-            ))}
-          </ul>
-          <i id="right" className="fa-solid fas fa-angle-right text-white bg-purple-500">&gt;</i>
-        </div>
+      <div className="projects-list p-8 md:p-24">
+        {projects.map((project, index) => (
+          <div
+            key={project.title}
+            className={`flex flex-col md:flex-row items-start justify-center ${
+              index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+            } mb-16`}
+          >
+            <img
+              src={project.imageUrl}
+              alt={project.title}
+              className="w-full md:w-1/2 lg:w-1/3 mb-4 md:mb-0"
+            />
+            <div
+              className="ml-0 md:ml-4 flex flex-col justify-center self-center text-white text-center md:text-left max-w-full md:max-w-1/2"
+            >
+              <h2 className="text-2xl font-bold">{project.title}</h2>
+              <p className="mt-2">{project.description}</p>
+              <a
+                href={project.articleUrl}
+                className="text-blue-500 mt-4 inline-block"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-      
-    </div>
-  )
+  );
 }

@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 
 const sidebar = {
   open: (height = 1000) => ({
-    clipPath: `circle(${height * 0.3}px at 20px 20px)`,
+    clipPath: `circle(${height * 0.3}px at 30px 30px)`,
     transition: {
       type: "spring",
       stiffness: 20,
@@ -83,7 +83,7 @@ export const Navigation = () => (
   </motion.ul>
 );
 
-const itemIds = ['Home','About','Education','Project'];
+const itemIds = ['Home','About','Skills','Certificates','Project'];
 
 const variants = {
   open: {
@@ -102,6 +102,7 @@ const variants = {
   }
 };
 
+const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 const scrollToSection = (id) => {
   const section = document.getElementById(id);
   if (section) {
@@ -109,6 +110,7 @@ const scrollToSection = (id) => {
   }
 };
 export const MenuItem = ({ i }) => {
+  const style = { border: `2px solid ${colors[i]}` };
   return (
     <motion.li
       className="mobile-nav-item"

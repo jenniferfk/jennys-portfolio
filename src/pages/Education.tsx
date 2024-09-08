@@ -10,7 +10,7 @@ export default function Education() {
 
     certificateData.forEach(certificate => {
       const certDiv = document.createElement('div');
-      certDiv.classList.add('certifdiv', 'flex', 'hover:bg-purple-900', 'hover:bg-opacity-60', 'rounded', 'mb-10');
+      certDiv.classList.add('certifdiv', 'flex', 'hover:bg-purple-700', 'hover:bg-opacity-40', 'rounded', 'mb-10');
 
       const certImageContainer = document.createElement('div');
       certImageContainer.classList.add('w-2/5', 'flex', 'justify-center');
@@ -23,7 +23,7 @@ export default function Education() {
       const certContent = document.createElement('div');
       certContent.classList.add('w-4/5');
       const certTitle = document.createElement('h5');
-      certTitle.classList.add('text-lg');
+      certTitle.classList.add('text-lg','font-bold');
       certTitle.innerHTML =` ${certificate.title} ━ ${certificate.issuer} <span className="arrowspan">➚</span>`;
       const certDesc = document.createElement('p');
       certDesc.classList.add('certifparagraph', 'text-base');
@@ -45,42 +45,14 @@ export default function Education() {
   }, []);
   return (
     <div className="container mt-12 px-6">
-      <div className="flex items-center">
-        <h1 className="text-2xl font-bold text-purple-500">Education</h1>
-        <div className="flex-grow border-t border-purple-500 ml-4"></div>
-      </div>
-      <div className="text-white mt-8">
-      <div className="collegediv ml-4 sm:ml-8 md:ml-16">
-          <div className="text-3xl mb-6 font-extrabold">College</div>
-          <div id="college" className="space-y-8">
-          <div className="flex flex-col sm:flex-row items-start">
-      <div className="years ml-12 sm:text-left sm:w-1/4 mb-4 sm:mb-0 sm:mr-4">2021 ━━ Present</div>
-      <div className="eduparagraph sm:w-3/4">
-        <h5 className="text-lg">Computer Science ━ CNAM Nahr Ibrahim</h5>
-        <p>My coursework has covered a wide range of computer science topics, including Data Structures, Algorithms, Web Development (HTML, CSS, JS, PHP), Python, Java, & Database Courses (MySQL, PL/SQL...).</p>
-        <p>These courses have equipped me with a solid understanding of fundamental concepts and practical coding skills.</p>
-      </div>
-    </div>
-    <div className="flex flex-col sm:flex-row items-start">
-      <div className="years ml-12 sm:text-left sm:w-1/4 mb-4 sm:mb-0 sm:mr-4">2020 ━━ 2021</div>
-      <div className="eduparagraph sm:w-3/4">
-        <h5 className="text-lg">BioChemistry ━ Lebanese University Fanar</h5>
-        <p>Completed 60 credits.</p>
-        <p>My coursework has encompassed a wide range of subjects, including Cytology, Histology, Anatomy, Genetic, Ecology, Geology, Chemistry, and many more courses.</p>
-      </div>
-    </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="text-white mt-16">
+      <div className=" text-gray-700 mt-16">
         <div className="certificatesdiv ml-4 sm:ml-8 md:ml-16">
           <div className="text-3xl mr-8 font-extrabold">Certificates</div>
           <div className="flex flex-col sm:flex-row items-start">
       <div className="years text-sm ml-12 sm:text-left sm:w-1/4 mb-4 sm:mb-0 sm:mr-4">Feb 2024 ━━ May 2024</div>
               <div className="eduparagraph sm:w-3/4">
                 <h5 className="text-lg">Eurisko Academy</h5>
-                <h6 className='text-purple-200'>React JS and React Native Certification with 3.9 GPA </h6>
+                <h6 className='text-purple-500'>React JS and React Native Certification with 3.9 GPA </h6>
                   <p className='ml-2'> - Acquired comprehensive knowledge in building user interfaces using React JS and React Native.</p>
                   <p className='ml-2'> - Mastered state management with Redux and Context API.</p>
                   <p className='ml-2'> - Developed server-side rendered applications with Next.js.</p>
@@ -92,7 +64,7 @@ export default function Education() {
         </div>
       </div>
 
-      <div className=" text-white justify-center items-center">
+      <div className=" text-gray-800 justify-center items-center">
           <div className="certificatesdiv ml-4 sm:ml-8 md:ml-16">
                 <div className="text-3xl mr-8 mt-16 font-extrabold">Online Certificates</div>
         <div id="certificates" className="mt-16 ml-16 ">
