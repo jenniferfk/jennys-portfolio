@@ -110,7 +110,7 @@ const scrollToSection = (id) => {
   }
 };
 export const MenuItem = ({ i }) => {
-  const style = { border: `2px solid ${colors[i]}` };
+  //const style = { border: `2px solid ${colors[i]}` };
   return (
     <motion.li
       className="mobile-nav-item"
