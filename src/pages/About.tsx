@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import './pages.css';
 import selfPic from '../data/pics/self-pic5.png';
 export default function About() {
